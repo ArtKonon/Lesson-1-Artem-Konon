@@ -16,6 +16,11 @@ import "strings"
 func Greet(name string) string {
 	// TODO: реалізуйте функцію.
 	// Підказка: гляньте strings.TrimSpace для обрізання пробілів.
-	_ = strings.TrimSpace // видаліть цей рядок, коли почнете писати код
-	return ""
+	cleanName := strings.TrimSpace(name)
+
+	if cleanName == "" {
+		return "Hello, stranger! Welcome to Go."
+	}
+
+	return "Hello, " + cleanName + "! Welcome to Go."
 }
