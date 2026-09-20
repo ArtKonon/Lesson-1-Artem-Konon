@@ -1,15 +1,15 @@
 package greet
 
 import (
-	"fmt"
 	"strings"
 )
 
 func Greet(name string) string {
-	if name == "" {
-		fmt.Println("Hello, stranger! Welcome to Go.")
-	} else {
-		fmt.Println("Hello, ", strings.TrimSpace(name)+"! Welcome to Go.")
+	cleanName := strings.TrimSpace(name)
+
+	if cleanName == "" {
+		return "Hello, stranger! Welcome to Go."
 	}
-	return ""
+
+	return "Hello, " + cleanName + "! Welcome to Go."
 }
